@@ -1,0 +1,39 @@
+{% load static %}
+
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <header class = 'p-3 mb-3 border-bottom'>
+          <ul class="nav nav-pills">
+              <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+          </ul>
+    </header>
+
+
+{% for m in messages%}
+<div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" style = 'backgroundcolor: yellow'>
+
+<!--  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">-->
+    <img src= 'https://www.pngkit.com/png/detail/281-2812821_user-account-management-logo-user-icon-png.png' alt="twbs" class="rounded-circle flex-shrink-0" width="40" height="32">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="">{{m.name}} </h6>
+          <span>Company: <i>{{m.company}}</i></span><br>
+          <h7><b><i>{{m.email}}</i></b></h7>
+        <p class="mb-0 opacity-75">{{m.message}}</p>
+      </div>
+<!--      <small class="opacity-50 text-nowrap">now</small>-->
+    </div>
+
+<!--  </a>-->
+</div>
+{% endfor %}
+
+</body>
+</html>
